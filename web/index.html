@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Primary SEO Meta -->
+  <title>Queens — Crown Placement Logic Puzzle</title>
+  <meta name="description" content="Play Queens, a challenging crown-placement logic puzzle. Place queens on colored regions — one per row, column, and region, no touching. Infinite procedurally generated levels 5×5 to 16×16. No ads, no trackers, fully offline.">
+  <meta name="keywords" content="Queens puzzle, logic puzzle, crown placement, brain training, Flutter game, offline game, no ads, GPL">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://queens-web.pages.dev/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Queens — Crown Placement Logic Puzzle">
+  <meta property="og:description" content="Place queens on a grid of colored regions. One per row, column, and region. Queens cannot touch. Infinite levels 5×5 to 16×16. Free, no ads, no trackers, fully offline.">
+  <meta property="og:url" content="https://queens-web.pages.dev/">
+  <meta property="og:image" content="https://queens-web.pages.dev/icons/Icon-192.png">
+  <meta property="og:image:width" content="192">
+  <meta property="og:image:height" content="192">
+  <meta property="og:site_name" content="Queens Puzzle">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Queens — Crown Placement Logic Puzzle">
+  <meta name="twitter:description" content="Challenging logic puzzle: place queens on colored regions. No ads, no trackers, offline. Play free in browser.">
+  <meta name="twitter:image" content="https://queens-web.pages.dev/icons/Icon-192.png">
+
+  <!-- Theme & Mobile -->
+  <meta name="theme-color" content="#1a1a2e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Queens">
+
+  <!-- Favicon & Manifest -->
+  <link rel="icon" type="image/png" href="icons/Icon-192.png">
+  <link rel="icon" type="image/svg+xml" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://queens-web.pages.dev/#website",
+        "url": "https://queens-web.pages.dev/",
+        "name": "Queens Puzzle",
+        "description": "Crown placement logic puzzle game — place queens on colored regions with no adjacent queens. Infinite procedurally generated levels.",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://queens-web.pages.dev/#organization",
+          "name": "Queens Puzzle",
+          "url": "https://queens-web.pages.dev/"
+        },
+        "potentialAction": {
+          "@type": "PlayAction",
+          "target": "https://queens-web.pages.dev/",
+          "name": "Play Queens Puzzle"
+        }
+      },
+      {
+        "@type": "VideoGame",
+        "@id": "https://queens-web.pages.dev/#game",
+        "name": "Queens",
+        "alternateName": "Crown Placement Logic Puzzle",
+        "description": "A challenging crown-placement logic puzzle where you place queens on a grid of colored regions. Rules: exactly one queen per row, column, and colored region. Queens cannot touch each other, even diagonally. Features infinite procedurally generated puzzles from 5×5 to 16×16, 150+ structured progression levels, zero ads, zero trackers, fully offline.",
+        "genre": ["Puzzle", "Logic", "Brain Training"],
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any (WebAssembly)",
+        "applicationCategory": "Game",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "sidhant947"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Queens Puzzle"
+        },
+        "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "url": "https://queens-web.pages.dev/",
+        "datePublished": "2024-01-01",
+        "dateModified": "2026-11-25"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://queens-web.pages.dev/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do you play Queens?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Place exactly one queen in each row, each column, and each colored region. Queens cannot touch each other, even diagonally (no adjacent placements including corners)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Queens free to play?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Queens is completely free. No ads, no in-app purchases, no trackers, no data collection. It runs entirely offline in your browser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What puzzle sizes are available?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Procedurally generated random puzzles from 5×5 up to 9×9, plus 150+ structured progression levels that scale up to a massive 16×16 grid."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I play Queens offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Queens requires no internet connection. Your progress is saved locally using Hive persistence. Play anywhere, anytime."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What license is Queens released under?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Queens is licensed under the GNU General Public License v3.0 (GPL-3.0). Source code is available at https://github.com/sidhant947/Queens"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Flutter bootstrap -->
+  <script defer src="flutter_bootstrap.js"></script>
+</head>
+<body>
+  <!-- Loading indicator (accessible) -->
+  <div id="loading" role="status" aria-live="polite" aria-label="Loading Queens puzzle game">
+    <div class="loading-spinner" aria-hidden="true"></div>
+    <p class="loading-text">Loading Queens...</p>
+  </div>
+
+  <!-- No-script fallback -->
+  <noscript>
+    <div style="padding: 2rem; text-align: center; background: #1a1a2e; color: #eaeaea; font-family: system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <h1 style="margin-bottom: 1rem;">Queens Puzzle</h1>
+      <p style="max-width: 400px; margin-bottom: 1.5rem;">This game requires JavaScript and WebAssembly to run. Please enable JavaScript in your browser settings.</p>
+      <p style="font-size: 0.9rem; opacity: 0.7;">A crown-placement logic puzzle: place queens on colored regions — one per row, column, and region, no touching. Infinite levels 5×5 to 16×16. No ads, no trackers, fully offline. Licensed under GPL-3.0.</p>
+      <a href="https://github.com/sidhant947/Queens" style="color: #64b5f6; text-decoration: underline;">View source on GitHub</a>
+    </div>
+  </noscript>
+
+  <flt-glass-pane id="flutter-app"></flt-glass-pane>
+
+  <script>
+    // Remove loading overlay once Flutter initializes
+    (function() {
+      const loading = document.getElementById('loading');
+      const glassPane = document.querySelector('flt-glass-pane');
+
+      function checkCanvas() {
+        if (glassPane && glassPane.shadowRoot) {
+          const canvas = glassPane.shadowRoot.querySelector('canvas');
+          if (canvas && canvas.width > 0) {
+            loading?.remove();
+            return;
+          }
+        }
+        // Fallback: remove after 15 seconds max
+        setTimeout(checkCanvas, 100);
+      }
+
+      // Start checking after a brief delay
+      setTimeout(checkCanvas, 500);
+
+      // Hard fallback
+      setTimeout(() => loading?.remove(), 15000);
+    })();
+  </script>
+
+  <style>
+    /* Minimal loading styles - removed after Flutter ready */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: #1a1a2e;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    #loading.hidden { opacity: 0; pointer-events: none; }
+    .loading-spinner {
+      width: 48px;
+      height: 48px;
+      border: 3px solid #2a2a4a;
+      border-top-color: #64b5f6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading-text { margin-top: 1rem; color: #a0a0c0; font-family: system-ui, sans-serif; }
+  </style>
+</body>
+</html>
