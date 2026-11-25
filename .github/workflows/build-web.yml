@@ -1,0 +1,100 @@
+name: Build Flutter Web
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/build-web.yml'
+      - 'web/**'
+      - 'seo/**'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  build:
+    name: Build Flutter Web Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout this repo (for web/ and seo/ files)
+        uses: actions/checkout@v4
+        with:
+          path: build-repo
+
+      - name: Clone upstream Queens source
+        run: |
+          git clone --depth 1 https://github.com/sidhant947/Queens.git upstream
+          cd upstream
+          echo "UPSTREAM_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
+          echo "UPSTREAM_VERSION=$(grep '^version:' pubspec.yaml | sed 's/version: //')" >> $GITHUB_ENV
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.27.1'
+          channel: 'stable'
+          cache: true
+
+      - name: Enable web support
+        run: |
+          cd upstream
+          flutter config --enable-web
+
+      - name: Create web platform if missing
+        run: |
+          cd upstream
+          if [ ! -d "web" ]; then
+            flutter create --platforms=web .
+          fi
+
+      - name: Copy custom web shell and SEO files
+        run: |
+          cd upstream
+          # Backup original index.html
+          cp web/index.html web/index.html.orig 2>/dev/null || true
+          # Copy custom SEO-enhanced index.html
+          cp ../build-repo/web/index.html web/index.html
+          # Copy SEO support files
+          mkdir -p web/seo
+          cp ../build-repo/seo/robots.txt web/seo/robots.txt
+          cp ../build-repo/seo/sitemap.xml web/seo/sitemap.xml
+          cp ../build-repo/seo/llms.txt web/seo/llms.txt
+
+      - name: Get dependencies
+        run: |
+          cd upstream
+          flutter pub get
+
+      - name: Build Flutter Web (release)
+        run: |
+          cd upstream
+          flutter build web --release --base-href / --build-name=${UPSTREAM_VERSION%+*} --build-number=${UPSTREAM_VERSION##*+}
+
+      - name: Copy GPL license to build output
+        run: |
+          cd upstream
+          cp LICENSE build/web/LICENSE 2>/dev/null || echo "LICENSE not found in upstream root"
+
+      - name: Verify build output
+        run: |
+          ls -la upstream/build/web/
+          echo "Main.dart.js size: $(stat -c%s upstream/build/web/main.dart.js 2>/dev/null || stat -f%z upstream/build/web/main.dart.js) bytes"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: queens-web
+          path: upstream/build/web/
+          retention-days: 7
+          compression-level: 6
+
+      - name: Upload build info
+        run: |
+          echo "upstream_sha=${UPSTREAM_SHA}" >> $GITHUB_OUTPUT
+          echo "upstream_version=${UPSTREAM_VERSION}" >> $GITHUB_OUTPUT
+    outputs:
+      upstream_sha: ${{ steps.verify-build.outputs.upstream_sha }}
+      upstream_version: ${{ steps.verify-build.outputs.upstream_version }}
