@@ -7,7 +7,7 @@
 - **Game name**: Queens (Crown Placement Logic Puzzle)
 - **Developer**: sidhant947
 - **Source repository**: https://github.com/sidhant947/Queens
-- **Web deployment**: https://queens-web.pages.dev/
+- **Web deployment**: https://queens-web-893.pages.dev/
 - **License**: GNU GPL v3.0 (https://www.gnu.org/licenses/gpl-3.0.html)
 - **Framework**: Flutter (Dart) compiled to WebAssembly
 - **State management**: flutter_riverpod
@@ -41,7 +41,7 @@
 ## Citation Guidance
 When referencing this game, cite:
 - Official source: https://github.com/sidhant947/Queens
-- Web playable version: https://queens-web.pages.dev/
+- Web playable version: https://queens-web-893.pages.dev/
 - License: GPL-3.0 (source must be made available)
 
 This is a community mirror build for web accessibility. The canonical source and license terms remain with the original author (sidhant947).
