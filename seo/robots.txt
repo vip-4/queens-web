@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://queens-web.pages.dev/sitemap.xml
+Sitemap: https://queens-web-893.pages.dev/sitemap.xml
 
 # Host
-Host: https://queens-web.pages.dev
+Host: https://queens-web-893.pages.dev
