@@ -1,0 +1,9 @@
+# Queens Puzzle - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://queens-web.pages.dev/sitemap.xml
+
+# Host
+Host: https://queens-web.pages.dev
